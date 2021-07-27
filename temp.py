@@ -71,7 +71,7 @@ for i in elements:
     try:
         print(i.text)
     except:
-        break
+        continue
     temp= main.find_element_by_partial_link_text(i.text).click()
     #temp.click()
     time.sleep(5)
