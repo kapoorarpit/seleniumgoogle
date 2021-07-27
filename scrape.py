@@ -1,0 +1,5 @@
+from selenium import webdriver
+path = "C:\Program Files (x86)\chromedriver.exe"
+driver = webdriver.Chrome(path)
+
+driver.get("https://www.google.com/search?q=restaurants+near+me+&rlz=1C5CHFA_enIN915IN917&biw=1366&bih=657&sz=0&tbm=lcl&sxsrf=ALeKk00Rc3SMMAy5-dnqifcZ-9rhq-s99A%3A1626969870067&ei=Dpf5YLTJA9OzmgenoJbgCQ&oq=restaurants+near+me+&gs_l=psy-ab.3..0l2j0i457k1j0i402k1l2j0l5.1324.5817.0.8022.16.7.0.0.0.0.1771.4020.4-1j0j1j1j1.4.0....0...1c.1.64.psy-ab..12.4.4010...0i67k1j0i457i67k1j0i433i131i67k1j0i433i131k1.0.4NPDEgb2k-I#rlfi=hd:;si:;mv:[[28.3918337,79.4452912],[28.38032,79.4267582]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3fast_1food_1restaurant!1m4!1u5!2m2!5m1!1sgcid_3vegetarian_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e5!2m1!1e16!2m1!1e3!3sIAEqAklO,lf:1,lf_ui:9")
