@@ -22,43 +22,58 @@ view_all = WebDriverWait(driver, 90).until(
     EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "View all"))
 )
 view_all.click()
-main = WebDriverWait(driver, 90).until(
-    EC.presence_of_element_located((By.CLASS_NAME, "rl_tile-group"))
-)
-elements = main.find_elements_by_class_name("dbg0pd")
-for i in elements:
-    try:
-        print(i.text)
-    except:
-        continue
+time.sleep(5)
+main= driver.find_element_by_xpath("//*[@id='rl_ist0']/div[1]")
+time.sleep(5)
+name = driver.find_elements_by_xpath("//div[@jscontroller='AtSb']")
+for i in name:
     temp= main.find_element_by_partial_link_text(i.text).click()
     #temp.click()
-    time.sleep(5)
+    time.sleep(2)
+
+    title= driver.find_element_by_xpath("//h2[@data-attrid='title']")
     try:
-        address= driver.find_element_by_class_name("Z1hOCe")
-        print("address : "+address.text)
+        print("Name : "+title.text)
+    except:
+        continue
+    print("")
+    try:
+        address= driver.find_element_by_xpath(" //div[@data-dtype='d3ifr' and @data-local-attribute='d3adr']")
+        print(address.text)
     except:
         print("address : N/A" )
+    print("")
     try:
-        rating = driver.find_element_by_class_name("Ob2kfd")
-        print("rating : "+rating.text)
+        rating = driver.find_element_by_xpath("//div[@data-md='205' and @lang='en-IN']")
+        newstr = rating.text.rstrip()
+        print("rating and reviews : ", end="")
+        rez = []
+        for sub in newstr:
+            rez.append(sub.replace("\n", " "))
+        for j in rez:
+            print(j, end="")
     except:
         print("ratings : N/A")
+    print("")
+    print("")
     try:
-        service = driver.find_element_by_tag_name("c-wiz")
+        service = driver.find_element_by_xpath("//c-wiz[@jsrenderer='KfXAkb' and @jsmodel='hc6Ubd']")
         print("service : "+service.text)
     except:
         print("service : N/A")
+    print("")
     try:
-        hours = driver.find_element_by_class_name("TLou0b")
+        hours = driver.find_element_by_xpath("//div[@role='button' and @jsaction='ytNONe']")
         print("hours : "+hours.text)
     except:
         print("hours : N/A")
+    print("")
     try:
-        contact = driver.find_element_by_class_name("LrzXr.zdqRlf.kno-fv")
+        contact = driver.find_element_by_xpath("//a[@data-dtype='d3ifr' and @href='#']")
         print("contact :" + contact.text)
     except:
         print("contact : N/A")
-
+    print("")
+    print("")
     print("")
 
